@@ -8,7 +8,7 @@ const Stack = createStackNavigator()
 const StackNavigator = () => {
   return (
     <Stack.Navigator 
-    screenOptions={{
+      screenOptions={{
         headerShown: false
       }} 
     >
