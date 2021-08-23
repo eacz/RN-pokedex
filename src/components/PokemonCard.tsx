@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { useRef } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import React, { useState, useEffect, useRef} from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image } from 'react-native'
 import ImageColors from 'react-native-image-colors'
+
 import { SimplePokemon } from '../interfaces/pokemonInterfaces'
 import FadeInImage from './FadeInImage'
 
@@ -12,6 +13,8 @@ interface Props {
 }
 
 const PokemonCard = ({pokemon} : Props) => {
+  //I use Any due to a bug in react navigation types
+  const navigation = useNavigation<any>()
   const [bgColor, setBgColor] = useState('grey')
   const isMounted = useRef(true)
 
@@ -32,7 +35,10 @@ const PokemonCard = ({pokemon} : Props) => {
   }
 
   return (
-    <TouchableOpacity activeOpacity={0.8}>
+    <TouchableOpacity 
+      activeOpacity={0.8} 
+      onPress={() => navigation.navigate("PokemonScreen", {simplePokemon: pokemon, color: bgColor} )} 
+    >
       <View style={{...styles.cardContainer, backgroundColor: bgColor}} >
         <View>
           <Text style={styles.name}>
