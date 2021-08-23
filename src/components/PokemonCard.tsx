@@ -12,7 +12,7 @@ interface Props {
   pokemon: SimplePokemon
 }
 
-const PokemonCard = ({pokemon} : Props) => {
+const PokemonCard = React.memo(({pokemon} : Props) => {
   //I use Any due to a bug in react navigation types
   const navigation = useNavigation<any>()
   const [bgColor, setBgColor] = useState('grey')
@@ -56,7 +56,7 @@ const PokemonCard = ({pokemon} : Props) => {
       </View>
     </TouchableOpacity>
   )
-}
+})
 
 const styles = StyleSheet.create({
     cardContainer: {
@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
       fontSize: 20,
       fontWeight: 'bold',
       top:20,
-      left: 10
+      left: 10,
+      textTransform: 'capitalize'
     },
     pokeballContainer: {
       width: 100,

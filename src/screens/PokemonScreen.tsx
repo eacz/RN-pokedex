@@ -67,7 +67,8 @@ const styles = StyleSheet.create({
       color: '#ffffff',
       fontSize: 40,
       alignSelf: 'flex-start',
-      left: 20
+      left: 20,
+      textTransform: 'capitalize'
     },
     pokeball: {
       width: 250,
