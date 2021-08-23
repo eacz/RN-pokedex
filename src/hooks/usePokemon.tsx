@@ -1,5 +1,4 @@
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState} from "react"
 import pokemonApi from "../api/pokemonApi"
 import { PokemonFull } from "../interfaces/pokemonInterfaces"
 
