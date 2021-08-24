@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import { StackScreenProps, } from '@react-navigation/stack'
 import Icon  from 'react-native-vector-icons/Ionicons';
-import { RouteStackParams } from '../navigation/navigator'
+import { RouteStackParams } from '../navigation/ListStack'
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import FadeInImage from '../components/FadeInImage';
 import usePokemon from '../hooks/usePokemon';

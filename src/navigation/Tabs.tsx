@@ -2,8 +2,9 @@ import React from 'react'
 import {Platform} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SearchScreen from '../screens/SearchScreen';
-import StackNavigator from './navigator';
+import ListStack from './ListStack';
 import Icon  from 'react-native-vector-icons/Ionicons';
+import SearchStack from './SearchStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +17,7 @@ const Tabs = () => {
         tabBarLabelStyle: {
           marginBottom: Platform.OS === 'ios' ? 0 : 5
         },
+        tabBarHideOnKeyboard: true,
         tabBarStyle: {
           position: 'absolute',
           backgroundColor: 'rgba(255,255,255,0.92)',
@@ -26,11 +28,11 @@ const Tabs = () => {
     >
       <Tab.Screen 
         options={{tabBarIcon: () => (<Icon name="list-outline" size={25}  color="#1976d2" />), tabBarLabel: 'List'}} 
-        name="StackScreen" component={StackNavigator} 
+        name="StackScreen" component={ListStack} 
       />
       <Tab.Screen
-        options={{tabBarIcon: () => (<Icon name="search-outline" size={25}  color="#1976d2" />), tabBarLabel: 'Search'}} 
-        name="SearchScreen" component={SearchScreen} 
+        options={{tabBarIcon: () => (<Icon name="search-outline" size={25}  color="#1976d2" />), tabBarLabel: 'Search',}} 
+        name="SearchStack" component={SearchStack} 
       />
     </Tab.Navigator>
   );

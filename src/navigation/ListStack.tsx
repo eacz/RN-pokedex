@@ -12,7 +12,7 @@ export type RouteStackParams = {
 
 const Stack = createStackNavigator<RouteStackParams>()
 
-const StackNavigator = () => {
+const ListStack = () => {
   return (
     <Stack.Navigator 
       screenOptions={{
@@ -25,4 +25,4 @@ const StackNavigator = () => {
   )
 }
 
-export default StackNavigator
+export default ListStack

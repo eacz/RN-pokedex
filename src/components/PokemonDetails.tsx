@@ -10,7 +10,7 @@ interface Props {
 
 const PokemonDetails = ({pokemon}: Props) => {
   return (
-    <ScrollView showsVerticalScrollIndicator={false} style={{...StyleSheet.absoluteFillObject}} >
+    <ScrollView showsVerticalScrollIndicator={false} style={{...StyleSheet.absoluteFillObject, marginBottom:40}} >
       {/* Types and weight */}
       <View style={{...styles.container, marginTop: 370}}>
         <Text style={styles.title} >Types: </Text>
